@@ -32,7 +32,9 @@ class User:
                                                                 "012") | Phone.startswith("010") | Phone.startswith(
                                                                 "015"))):
                                                         print("You have completed the registration.")
-                                                        data = [First_Name, Last_Name, email, Password, Phone]
+                                                        data = {'firstname': [First_Name], 'lastname': [Last_Name],
+                                                                'email': [email],
+                                                                'password': [Password], 'phone': [Phone]}
                                                         save_user(data)
                                                         break
                                                     else:

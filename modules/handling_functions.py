@@ -1,4 +1,4 @@
-import datetime, csv, pandas as pd
+import datetime, pandas as pd
 from modules.project import Project
 
 
@@ -109,10 +109,8 @@ def handel_orders(number, username):
 
 
 def save_user(data):
-    with open("usersDB.csv", "a") as csvfile:
-        csvwriter = csv.writer(csvfile)
-        fields = data
-        csvwriter.writerow(fields)
+    df = pd.DataFrame(data)
+    df.to_csv('usersDB.csv', mode='a', index=False, header=False)
 
 
 def get_user(email, password):
